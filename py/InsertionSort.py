@@ -16,11 +16,10 @@ class InsertionSort:
     def insert(self, i):
         """Inserts the 'Transition element' into its correct position in the sorted portion of the array."""
         for j in range(0, i):
-            if self.array[j] < self.array[i]:
-                continue
-            for k in range(i, j, -1):
-                self.swap(k, k - 1)
-            break
+            if self.array[j] > self.array[i]:
+                for k in range(i, j, -1):
+                    self.swap(k, k - 1)
+                break
 
         if DEBUG:
             print(self.array)
